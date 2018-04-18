@@ -31,6 +31,8 @@
 #define M_RSFT    MT(MOD_RSFT, BP_M)    // 'M' key and right shift modifier.
 #define W_RCTL    MT(MOD_RCTL, BP_W)    // 'W' key and right control modifier.
 #define SPC_RALT  MT(MOD_RALT, KC_SPC)  // SPACE key and right alt modifier.
+#define ENT_RALT  MT(MOD_RALT, KC_ENT)  // SPACE key and right alt modifier.
+#define LSFT_ESC  MT(KC_LSFT, KC_ESC)  // SPACE key and right alt modifier.
 #define PERC_FN    LT(FN, BP_PERC)      // '%' key and FN layer toggle.
 #define ALT_APP   ALT_T(KC_APPLICATION) // Alt and App menu
 
@@ -56,8 +58,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = KEYMAP(
     /* left hand */
     BP_DLR,   BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN, TD(TAP_MACRO),
-    KC_ESC,   BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(NUMS),
-    KC_LSFT,  BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
+    KC_LALT,   BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(NUMS),
+    LSFT_ESC,  BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
     KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(MOUSE),
     KC_HYPR,   BP_ECRC, ALT_APP, KC_LEFT, KC_RIGHT,
                                                           TT(SWAP), KC_MEH,
@@ -71,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_UP, KC_DOWN, BP_CCED, KC_LALT, BP_PERC,
     KC_LEFT, KC_RIGHT,
     TT(FN),
-    RGUI(KC_LSFT), KC_TAB, KC_ENT),
+    RGUI(KC_LSFT), KC_TAB, ENT_RALT),
 
   // Layer 1: function and media keys.
   [FN] = KEYMAP(
@@ -101,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* left hand */
     KC_SLEP, KC_F1, KC_F2,   KC_F3,   KC_F4,    KC_F5,    ___,
     ___,     ___,   KC_BTN4, KC_MS_U, KC_BTN5,  ___,      ___,
-    ___,     ___,   KC_MS_L, KC_MS_D, KC_MS_R,  KC_LSFT,
+    ___,   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,  KC_LSFT,
     ___,     ___,   MK_CUT,  MK_COPY, MK_PASTE, KC_LCTRL, ___,
     ___,     ___,   ___,     ___,     ___,
                                                   ___, ___,
