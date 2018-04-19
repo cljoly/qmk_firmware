@@ -32,8 +32,10 @@
 #define M_RSFT    MT(MOD_RSFT, BP_M)    // 'M' key and right shift modifier.
 #define W_RCTL    MT(MOD_RCTL, BP_W)    // 'W' key and right control modifier.
 #define SPC_RALT  MT(MOD_RALT, KC_SPC)  // SPACE key and right alt modifier.
-#define ENT_RALT  MT(MOD_RALT, KC_ENT)  // SPACE key and right alt modifier.
-#define LSFT_ESC  MT(KC_LSFT, KC_ESC)  // SPACE key and right alt modifier.
+#define ENT_RALT  MT(MOD_RALT, KC_ENT)  // ENTER key and right alt modifier.
+#define TAB_RALT  MT(MOD_RALT, KC_TAB)  // TAB key and right alt modifier.
+#define LSFT_ESC  MT(KC_LSFT, KC_ESC)  // ESCAPE key and left shift modifier.
+#define LALT_ESC  MT(KC_LALT, KC_ESC)  // ESCAPE key and left alt modifier.
 #define PERC_FN    LT(FN, BP_PERC)      // '%' key and FN layer toggle.
 #define ALT_APP   ALT_T(KC_APPLICATION) // Alt and App menu
 
@@ -61,13 +63,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = KEYMAP(
     /* left hand */
     BP_DLR,   BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN, TD(TAP_MACRO),
-    KC_LALT,   BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(NUMS),
-    LSFT_ESC,  BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
+    LALT_ESC,   BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(NUMS),
+    KC_LSFT,  BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
     KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(MOUSE),
     KC_HYPR,   BP_ECRC, ALT_APP, KC_LEFT, KC_RIGHT,
                                                           TT(SWAP), KC_MEH,
                                                                    KC_CAPS,
-                                                SPC_RALT, KC_BSPC, KC_RGUI,
+                                                KC_SPC, KC_BSPC, KC_RGUI,
     /* right hand */
         KC_DEL,     BP_AT,   BP_PLUS,  BP_MINS, BP_SLSH,     BP_ASTR, BP_EQL,
         TD(TAP_CP),  BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
@@ -76,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                              KC_UP, KC_DOWN, BP_CCED, KC_LALT, BP_PERC,
     KC_LOCK, RESET,
     TT(FN),
-    RGUI(KC_LSFT), KC_TAB, ENT_RALT),
+    RGUI(KC_LSFT), TAB_RALT, KC_ENT),
 
   // Layer 1: function and media keys.
   [FN] = KEYMAP(
