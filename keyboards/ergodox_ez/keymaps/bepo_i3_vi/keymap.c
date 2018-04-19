@@ -49,6 +49,8 @@ enum {
   // values are added (as its value is used to create a couple of other keycodes
   // after it).
   DYNAMIC_MACRO_RANGE = SAFE_RANGE,
+  PAD_00, // 00 on numpad
+  PAD_000, // 000 on numpad
 };
 
 // This file must be included after DYNAMIC_MACRO_RANGE is defined...
@@ -123,20 +125,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Layer 3: Numeric keypad over 2 hands and system keys.
   [NUMS] = KEYMAP(
     /* left hand */
-    KC_PSCR, KC_INS, KC_PAUS,    ___,     ___,      ___, ___,
-    ___,     ___,    ___,        ___,     ___,      ___, ___,
-    ___,    KC_P1,   KC_P3,      KC_P5,     KC_P7,      KC_P9,
-    ___,     ___,    MK_CUT,     MK_COPY, MK_PASTE, ___, ___,
-    ___,     ___,    ___,        ___,     ___,
+    KC_PSCR, KC_INS, KC_PAUS,     ___,     ___,      ___, ___,
+    ___,     BP_DLR, ALTGR(BP_E), BP_COMM, BP_DOT,   BP_EQL, ___,
+    ___,     BP_1,   BP_3,        BP_5,    BP_7,     BP_9,
+    ___,     ___,    MK_CUT,      MK_COPY, MK_PASTE, ___, ___,
+    ___,     ___,    ___,         ___,     ___,
                                               ___, ___,
                                                    ___,
                                          ___, ___, ___,
     /* right hand */
-         ___,         ___,     ___,   ___,   ___,     ___,     KC_NLCK,
-         ___,     KC_PEQL, KC_PCMM, KC_PPLS, KC_P9,   KC_PMNS, KC_SLCK,
-                  KC_P8, KC_P6, KC_P4, KC_P2,   KC_P0, ___,
-         KC_PENT, KC_P0,   KC_P1, KC_P2, KC_P3,   KC_PAST, ___,
-                           ___,   ___,   ___,     KC_PSLS, ___,
+         ___, ___,  ___,     ___,     ___,     KC_SLCK, KC_NLCK,
+         ___, ___,  BP_PLUS, BP_MINS, BP_ASTR, BP_SLSH, ___,
+              BP_8, BP_6,    BP_4,    BP_2,    BP_0,    ___,
+         ___, ___,  PAD_00, PAD_000,  ___,     ___,     ___,
+                      ___,     ___,     ___,     ___,     ___,
     ___, ___,
     ___,
     ___, ___, ___),
@@ -226,10 +228,25 @@ void macro_tapdance_fn(qk_tap_dance_state_t *state, void *user_data) {
 qk_tap_dance_action_t tap_dance_actions[] = {
   // This Tap dance plays the macro 1 on TAP and records it on double tap.
   [TAP_MACRO] = ACTION_TAP_DANCE_FN(macro_tapdance_fn),
+  // Easy copy pasting
+  [TAP_CP] = ACTION_TAP_DANCE_DOUBLE(MK_COPY, MK_PASTE)
 };
 
 // Runs for each key down or up event.
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
+  // Process static custom macro___
+  if (record->event.pressed) {
+    switch(keycode) {
+    case PAD_00:
+      SEND_STRING(SS_LSFT("00"));
+      return false;
+    case PAD_000:
+      SEND_STRING(SS_LSFT("000")); // selects all and copies___t
+      return false;
+    }
+  }
+
   if (keycode != TD(TAP_MACRO)) {
     // That key is processed by the macro_tapdance_fn. Not ignoring it here is
     // mostly a no-op except that it is recorded in the macros (and uses space).
