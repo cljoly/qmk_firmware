@@ -18,6 +18,7 @@
 
 // The Tap Dance identifiers, used in the TD keycode and tap_dance_actions array.
 #define TAP_MACRO 0
+#define TAP_CP    1 // Copy pasting with tap dance
 
 // A 'transparent' key code (that falls back to the layers below it).
 #define ___ KC_TRANSPARENT
@@ -66,12 +67,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                    KC_CAPS,
                                                 SPC_RALT, KC_BSPC, KC_RGUI,
     /* right hand */
-        KC_DEL,  BP_AT,   BP_PLUS,  BP_MINS, BP_SLSH,     BP_ASTR, BP_EQL,
-        TT(FN), BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
-                BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
-        TT(BASE),  BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
-                            KC_UP, KC_DOWN, BP_CCED, KC_LALT, BP_PERC,
-    KC_LEFT, KC_RIGHT,
+        KC_DEL,     BP_AT,   BP_PLUS,  BP_MINS, BP_SLSH,     BP_ASTR, BP_EQL,
+        TD(TAP_CP),  BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
+                    BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
+        TT(BASE),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
+                             KC_UP, KC_DOWN, BP_CCED, KC_LALT, BP_PERC,
+    KC_LOCK, RESET,
     TT(FN),
     RGUI(KC_LSFT), KC_TAB, ENT_RALT),
 
