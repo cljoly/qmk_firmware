@@ -75,7 +75,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD(TAP_CP),  BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
                     BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
         TT(BASE),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
-                             KC_UP, KC_DOWN, BP_CCED, KC_LALT, BP_PERC,
+                             KC_UP, KC_DOWN, KC_LALT, BP_CCED, BP_PERC,
     KC_LOCK, RESET,
     TT(FN),
     TT(NUMS), TAB_RALT, KC_ENT),
