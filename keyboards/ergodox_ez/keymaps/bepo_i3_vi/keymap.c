@@ -62,14 +62,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Layer 0: basic keys.
   [BASE] = KEYMAP(
     /* left hand */
-    BP_DLR,   BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN, TD(TAP_MACRO),
-    LALT_ESC,   BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(NUMS),
-    KC_LSFT,  BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
+    BP_DLR,  BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN, TD(TAP_MACRO),
+    KC_ESC,  BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, KC_BSPC,
+    KC_LSFT, BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
     KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(MOUSE),
-    KC_HYPR,   BP_ECRC, ALT_APP, KC_LEFT, KC_RIGHT,
+    KC_HYPR, BP_ECRC, ALT_APP, KC_LEFT, KC_RIGHT,
                                                           TT(SWAP), KC_MEH,
                                                                    KC_CAPS,
-                                                KC_SPC, KC_BSPC, KC_RGUI,
+                                            KC_SPC, KC_LGUI, LGUI(KC_LSFT),
     /* right hand */
         KC_DEL,     BP_AT,   BP_PLUS,  BP_MINS, BP_SLSH,     BP_ASTR, BP_EQL,
         TD(TAP_CP),  BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                              KC_UP, KC_DOWN, BP_CCED, KC_LALT, BP_PERC,
     KC_LOCK, RESET,
     TT(FN),
-    RGUI(KC_LSFT), TAB_RALT, KC_ENT),
+    TT(NUMS), TAB_RALT, KC_ENT),
 
   // Layer 1: function and media keys.
   [FN] = KEYMAP(
@@ -137,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                          ___, ___, ___,
     /* right hand */
          ___, ___,  ___,     ___,     ___,     KC_SLCK, KC_NLCK,
-         ___, ___,  BP_PLUS, BP_MINS, BP_ASTR, BP_SLSH, ___,
+         ___, BP_PERC,  BP_PLUS, BP_MINS, BP_ASTR, BP_SLSH, ___,
               BP_8, BP_6,    BP_4,    BP_2,    BP_0,    ___,
          ___, ___,  PAD_00, PAD_000,  ___,     ___,     ___,
                       ___,     ___,     ___,     ___,     ___,
@@ -231,7 +231,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   // This Tap dance plays the macro 1 on TAP and records it on double tap.
   [TAP_MACRO] = ACTION_TAP_DANCE_FN(macro_tapdance_fn),
   // Easy copy pasting
-  [TAP_CP] = ACTION_TAP_DANCE_DOUBLE(MK_COPY, MK_PASTE)
+  [TAP_CP] = ACTION_TAP_DANCE_DOUBLE(MK_COPY, MK_PASTE),
 };
 
 // Runs for each key down or up event.
