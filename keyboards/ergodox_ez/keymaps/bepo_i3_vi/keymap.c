@@ -63,9 +63,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = KEYMAP(
     /* left hand */
     BP_DLR,  BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN, TD(TAP_MACRO),
-    KC_ESC,  BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(MOUSE),
+    KC_ESC,  BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(BASE),
     KC_LSFT, BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
-    KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(BASE),
+    KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(MOUSE),
     KC_HYPR, BP_ECRC, ALT_APP, KC_LEFT, KC_RIGHT,
                                                           TT(SWAP), KC_MEH,
                                                                    KC_CAPS,
