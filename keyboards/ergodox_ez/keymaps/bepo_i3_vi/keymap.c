@@ -137,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                          ___, ___, ___,
     /* right hand */
          ___, ___,  ___,     ___,     ___,     KC_SLCK, KC_NLCK,
-         ___, BP_PERC,  BP_PLUS, BP_MINS, BP_ASTR, BP_SLSH, ___,
+         ___,  BP_PLUS, BP_MINS, BP_ASTR, BP_SLSH, BP_PERC, ___,
               BP_8, BP_6,    BP_4,    BP_2,    BP_0,    ___,
          ___, ___,  PAD_00, PAD_000,  ___,     ___,     ___,
                       ___,     ___,     ___,     ___,     ___,
