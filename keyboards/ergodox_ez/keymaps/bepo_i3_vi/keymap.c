@@ -63,18 +63,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = KEYMAP(
     /* left hand */
     BP_DLR,  BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN, TD(TAP_MACRO),
-    KC_ESC,  BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, KC_BSPC,
+    KC_ESC,  BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(MOUSE),
     KC_LSFT, BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
-    KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(MOUSE),
+    KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(BASE),
     KC_HYPR, BP_ECRC, ALT_APP, KC_LEFT, KC_RIGHT,
                                                           TT(SWAP), KC_MEH,
                                                                    KC_CAPS,
                                             KC_SPC, KC_LGUI, LGUI(KC_LSFT),
     /* right hand */
         KC_DEL,     BP_AT,   BP_PLUS,  BP_MINS, BP_SLSH,     BP_ASTR, BP_EQL,
-        TD(TAP_CP),  BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
+        KC_BSPC,  BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
                     BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
-        TT(BASE),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
+        TD(TAP_CP),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
                              KC_UP, KC_DOWN, KC_LALT, BP_CCED, BP_PERC,
     KC_LOCK, RESET,
     TT(FN),
