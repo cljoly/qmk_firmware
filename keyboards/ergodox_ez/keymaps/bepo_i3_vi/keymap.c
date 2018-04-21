@@ -19,6 +19,10 @@
 // The Tap Dance identifiers, used in the TD keycode and tap_dance_actions array.
 #define TAP_MACRO 0
 #define TAP_CP    1 // Copy pasting with tap dance
+#define TAP_LH    2 // Left arrow and Home
+#define TAP_RE    3 // Right arrow and End
+#define TAP_UP    4 // Up arrow and Page Up
+#define TAP_DP    5 // Down arrow and Page Down
 
 // A 'transparent' key code (that falls back to the layers below it).
 #define ___ KC_TRANSPARENT
@@ -66,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(BASE),
     KC_LSFT, BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
     KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(MOUSE),
-    KC_HYPR, BP_ECRC, ALT_APP, KC_LEFT, KC_RIGHT,
+    KC_HYPR, BP_ECRC, ALT_APP, TD(TAP_LH), TD(TAP_RE),
                                                           TT(SWAP), KC_MEH,
                                                                    KC_CAPS,
                                             KC_SPC, KC_LGUI, LGUI(KC_LSFT),
@@ -75,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_BSPC,  BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
                     BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
         TD(TAP_CP),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
-                             KC_UP, KC_DOWN, KC_LALT, BP_CCED, BP_PERC,
+                               TD(TAP_UP), TD(TAP_DP), KC_LALT, BP_CCED, BP_PERC,
     KC_LOCK, RESET,
     TT(FN),
     TT(NUMS), TAB_RALT, KC_ENT),
@@ -232,6 +236,11 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TAP_MACRO] = ACTION_TAP_DANCE_FN(macro_tapdance_fn),
   // Easy copy pasting
   [TAP_CP] = ACTION_TAP_DANCE_DOUBLE(MK_COPY, MK_PASTE),
+  // Double arrow key
+  [TAP_LH] = ACTION_TAP_DANCE_DOUBLE(KC_LEFT, KC_HOME),
+  [TAP_RE] = ACTION_TAP_DANCE_DOUBLE(KC_RIGHT, KC_END),
+  [TAP_UP] = ACTION_TAP_DANCE_DOUBLE(KC_UP, KC_PGUP),
+  [TAP_DP] = ACTION_TAP_DANCE_DOUBLE(KC_DOWN, KC_PGDN),
 };
 
 // Runs for each key down or up event.
