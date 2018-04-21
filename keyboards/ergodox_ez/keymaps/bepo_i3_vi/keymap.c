@@ -66,10 +66,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Layer 0: basic keys.
   [BASE] = KEYMAP(
     /* left hand */
-    BP_DLR,  BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN, TD(TAP_MACRO),
-    KC_ESC,  BP_B,    BP_ECUT, BP_P,    BP_O,    BP_EGRV, TT(BASE),
-    KC_LSFT, BP_A,    BP_U,    BP_I,    BP_E,    BP_COMM,
-    KC_LCTL, BP_AGRV, BP_Y,    BP_X,    BP_DOT,  BP_K,    TT(MOUSE),
+    BP_DLR,  BP_DQOT, BP_LGIL, BP_RGIL,    BP_LPRN, BP_RPRN, TT(BASE),
+    KC_ESC,  BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(FN),
+    KC_LSFT, BP_A,    BP_U,    BP_I,       BP_E,    BP_COMM,
+    KC_LCTL, BP_AGRV, BP_Y,    BP_X,       BP_DOT,  BP_K,    TT(MOUSE),
     KC_HYPR, BP_ECRC, ALT_APP, TD(TAP_LH), TD(TAP_RE),
                                                           TT(SWAP), KC_MEH,
                                                                    KC_CAPS,
@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TD(TAP_CP),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
                                TD(TAP_UP), TD(TAP_DP), KC_LALT, BP_CCED, BP_PERC,
     KC_LOCK, RESET,
-    TT(FN),
+    TD(TAP_MACRO),
     TT(NUMS), TAB_RALT, KC_ENT),
 
   // Layer 1: function and media keys.
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* left hand */
     KC_SLEP, KC_F1, KC_F2,  KC_F3,   KC_F4,    KC_F5,    ___,
     ___,     ___,   ___,    ___,     ___,      ___,      ___,
-    ___,     ___,   KC_VOLU, KC_VOLD,     KC_MUTE,          ___,
+    ___,     ___,   KC_VOLD, KC_VOLU,     KC_MUTE,          ___,
     ___,     ___,   MK_CUT, MK_COPY, MK_PASTE,      ___, ___,
     ___,     ___,   ___,    ___,     ___,
                                                      ___, ___,
