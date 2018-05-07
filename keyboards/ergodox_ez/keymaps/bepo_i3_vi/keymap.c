@@ -67,17 +67,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = KEYMAP(
     /* left hand */
     BP_DLR,  BP_DQOT, BP_LGIL, BP_RGIL,    BP_LPRN, BP_RPRN, TT(BASE),
-    KC_ESC,  BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(FN),
+    ESC_FN,  BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(FN),
     KC_LSFT, BP_A,    BP_U,    BP_I,       BP_E,    BP_COMM,
     KC_LCTL, BP_AGRV, BP_Y,    BP_X,       BP_DOT,  BP_K,    TT(MOUSE),
-    KC_HYPR, BP_ECRC, ALT_APP, TD(TAP_LH), TD(TAP_RE),
-                                                          TT(SWAP), KC_MEH,
+    KC_MEH, BP_ECRC, ALT_APP, TD(TAP_LH), TD(TAP_RE),
+                                                          TT(SWAP), KC_HYPR,
                                                                    KC_CAPS,
                                             KC_SPC, KC_LGUI, LGUI(KC_LSFT),
     /* right hand */
-        KC_DEL,     BP_AT,   BP_PLUS,  BP_MINS, BP_SLSH,     BP_ASTR, BP_EQL,
-        KC_BSPC,  BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
-                    BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
+        KC_DEL,  BP_AT,   BP_PLUS,  BP_MINS, BP_SLSH,     BP_ASTR, BP_EQL,
+        KC_BSPC, BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
+                 BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
         TD(TAP_CP),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
                                TD(TAP_UP), TD(TAP_DP), KC_LALT, BP_CCED, BP_PERC,
     KC_LOCK, RESET,
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [FN] = KEYMAP(
     /* left hand */
     KC_SLEP, KC_F1, KC_F2,  KC_F3,   KC_F4,    KC_F5,    ___,
-    ___,     ___,   ___,    ___,     ___,      ___,      ___,
+    ___,     ___,   KC_PSCR,    ___,     ___,      ___,      ___,
     ___,     ___,   KC_VOLD, KC_VOLU,     KC_MUTE,          ___,
     ___,     ___,   MK_CUT, MK_COPY, MK_PASTE,      ___, ___,
     ___,     ___,   ___,    ___,     ___,
@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Layer 3: Numeric keypad over 2 hands and system keys.
   [NUMS] = KEYMAP(
     /* left hand */
-    KC_PSCR, KC_INS, KC_PAUS,     ___,     ___,      ___, ___,
+    ___, KC_INS, KC_PAUS,     ___,     ___,      ___, ___,
     ___,     BP_DLR, ALTGR(BP_E), BP_COMM, BP_DOT,   BP_EQL, ___,
     ___,     BP_1,   BP_3,        BP_5,    BP_7,     BP_9,
     ___,     ___,    MK_CUT,      MK_COPY, MK_PASTE, ___, ___,
