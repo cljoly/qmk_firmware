@@ -38,10 +38,12 @@
 #define SPC_RALT  MT(MOD_RALT, KC_SPC)  // SPACE key and right alt modifier.
 #define ENT_RALT  MT(MOD_RALT, KC_ENT)  // ENTER key and right alt modifier.
 #define TAB_RALT  MT(MOD_RALT, KC_TAB)  // TAB key and right alt modifier.
-#define LSFT_ESC  MT(KC_LSFT, KC_ESC)  // ESCAPE key and left shift modifier.
+#define LSFT_ESC  MT(MOD_LSFT, KC_ESC)  // ESCAPE key and left shift modifier.
 #define LALT_ESC  MT(KC_LALT, KC_ESC)  // ESCAPE key and left alt modifier.
 #define PERC_FN    LT(FN, BP_PERC)      // '%' key and FN layer toggle.
 #define ALT_APP   ALT_T(KC_APPLICATION) // Alt and App menu
+#define OSM_HYPR   OSM(MOD_HYPR) // Hyper with one-shot mod
+#define OSM_MEH   OSM(MOD_MEH) // Meh with one-shot mod
 
 // The most portable copy/paste keys (windows (mostly), linux, and some terminal emulators).
 #define MK_CUT    LSFT(KC_DEL)  // shift + delete
@@ -66,12 +68,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Layer 0: basic keys.
   [BASE] = KEYMAP(
     /* left hand */
-    BP_DLR,  BP_DQOT, BP_LGIL, BP_RGIL,    BP_LPRN, BP_RPRN, TT(BASE),
-    ESC_FN,  BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(FN),
-    KC_LSFT, BP_A,    BP_U,    BP_I,       BP_E,    BP_COMM,
-    KC_LCTL, BP_AGRV, BP_Y,    BP_X,       BP_DOT,  BP_K,    TT(MOUSE),
-    KC_MEH, BP_ECRC, ALT_APP, TD(TAP_LH), TD(TAP_RE),
-                                                          TT(SWAP), KC_HYPR,
+    BP_DLR,   BP_DQOT, BP_LGIL, BP_RGIL,    BP_LPRN, BP_RPRN, TT(BASE),
+    OSM_MEH,   BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(FN),
+    LSFT_ESC, BP_A,    BP_U,    BP_I,       BP_E,    BP_COMM,
+    KC_LCTL,  BP_AGRV, BP_Y,    BP_X,       BP_DOT,  BP_K,    TT(MOUSE),
+    OSM_HYPR,   BP_ECRC, ALT_APP, TD(TAP_LH), TD(TAP_RE),
+                                                          TT(SWAP), KC_LEAD,
                                                                    KC_CAPS,
                                             KC_SPC, KC_LGUI, LGUI(KC_LSFT),
     /* right hand */
