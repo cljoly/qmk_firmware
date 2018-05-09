@@ -112,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Layer 2: Mouse control.
   [MOUSE] = KEYMAP(
     /* left hand */
-    ___, KC_F1, KC_F2,   KC_F3,   KC_F4,    KC_F5,    ___,
+    ___, ___, ___,   ___,   ___,    ___,    ___,
     ___,     ___,   KC_BTN4, KC_MS_U, KC_BTN5,  ___,      ___,
     ___,   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,  KC_LSFT,
     ___,     ___,   MK_CUT,  MK_COPY, MK_PASTE, KC_LCTRL, ___,
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                        ___,
                                              ___, ___, ___,
     /* right hand */
-         ___, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10, KC_F11,
+         ___, ___,   ___,   ___,   ___,   ___, ___,
          ___, KC_BTN2, KC_WH_L, KC_WH_R, ___,     XXX,    KC_F12,
          ___, KC_BTN1, KC_WH_D, KC_WH_U, KC_BTN3, ___,
          ___, ___,     KC_ACL0, KC_ACL1, KC_ACL2, ___,    ___,
@@ -133,19 +133,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Layer 3: Numeric keypad over 2 hands and system keys.
   [NUMS] = KEYMAP(
     /* left hand */
-    ___, KC_INS, KC_PAUS,     ___,     ___,      ___, ___,
-    ___,     BP_DLR, ALTGR(BP_E), BP_COMM, BP_DOT,   BP_EQL, ___,
-    ___,     BP_1,   BP_3,        BP_5,    BP_7,     BP_9,
-    ___,     ___,    MK_CUT,      MK_COPY, MK_PASTE, ___, ___,
-    ___,     ___,    ___,         ___,     ___,
+    ___, ___, ___,     ___,     ___,      ___, ___,
+    ___, BP_DLR, ALTGR(BP_E), BP_COMM, BP_DOT,   BP_EQL, ___,
+    ___, BP_1,   BP_3,        BP_5,    BP_7,     BP_9,
+    ___, KC_INS,    MK_CUT,      MK_COPY, MK_PASTE, KC_PAUS, ___,
+    ___, ___,    ___,         ___,     ___,
                                               ___, ___,
                                                    ___,
                                          ___, ___, ___,
     /* right hand */
-         ___, ___,  ___,     ___,     ___,     KC_SLCK, KC_NLCK,
+         ___, ___,  ___,     ___,     ___,     ___, ___,
          ___,  BP_PLUS, BP_MINS, BP_ASTR, BP_SLSH, BP_PERC, ___,
               BP_8, BP_6,    BP_4,    BP_2,    BP_0,    ___,
-         ___, ___,  PAD_00, PAD_000,  ___,     ___,     ___,
+         ___, ___,  PAD_00, PAD_000,  KC_SLCK,     KC_NLCK,     ___,
                       ___,     ___,     ___,     ___,     ___,
     ___, ___,
     ___,
