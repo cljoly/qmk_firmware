@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___, ___,     ___,     ___,     ___,      ___,   ___,
     ___, KC_F1,   KC_F2,   KC_F3,   KC_F4,    KC_F5, ___,
     ___, ___,     KC_VOLD, KC_VOLU, KC_MUTE,   ___,
-    ___, KC_PSCR, MK_CUT,  MK_COPY, MK_PASTE,  ___,  ___,
+    ___, KC_PSCR, KC_CUT,  KC_COPY, KC_PASTE,  ___,  ___,
     ___, KC_SLEP, ___,     ___,     ___,
                                                      ___, ___,
                                                           ___,
