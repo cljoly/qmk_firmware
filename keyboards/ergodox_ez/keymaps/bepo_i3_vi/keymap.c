@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* right hand */
         ___, ___,     ___,     ___,     ___,     ___,     ___,
         ___, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
-             KC_MSTP, KC_MPLY, KC_MPRV, KC_MPRV, KC_F12,  ___,
+             KC_MSTP, KC_MPLY, KC_MPRV, KC_MNXT, KC_F12,  ___,
         ___, KC_HOME, KC_END,  KC_PGUP, KC_PGDN, ___,     ___,
                       ___,     ___,     ___,     KC_WAKE, ___,
     ___, ___,
