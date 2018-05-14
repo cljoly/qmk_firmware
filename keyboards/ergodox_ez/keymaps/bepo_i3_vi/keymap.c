@@ -41,6 +41,7 @@
 #define LSFT_ESC  MT(MOD_LSFT, KC_ESC)  // ESCAPE key and left shift modifier.
 #define LALT_ESC  MT(KC_LALT, KC_ESC)  // ESCAPE key and left alt modifier.
 #define PERC_FN    LT(FN, BP_PERC)      // '%' key and FN layer toggle.
+#define PERC_CLT    MT(MOD_LCTL | MOD_LALT, BP_PERC)      // '%' key and LCTL+LALT.
 #define ALT_APP   ALT_T(KC_APPLICATION) // Alt and App menu
 #define OSM_HYPR   OSM(MOD_HYPR) // Hyper with one-shot mod
 #define OSM_MEH   OSM(MOD_MEH) // Meh with one-shot mod
@@ -81,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_BSPC, BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
                  BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
         TD(TAP_CP),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
-                               TD(TAP_UP), TD(TAP_DP), KC_LALT, BP_CCED, BP_PERC,
+                               TD(TAP_UP), TD(TAP_DP), KC_LALT, BP_CCED, PERC_CLT,
     KC_LOCK, RESET,
     TD(TAP_MACRO),
     TT(NUMS), TAB_RALT, KC_ENT),
