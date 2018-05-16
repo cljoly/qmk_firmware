@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LEAD,   BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(FN),
     LSFT_ESC, BP_A,    BP_U,    BP_I,       BP_E,    BP_COMM,
     KC_LCTL,  BP_AGRV, BP_Y,    BP_X,       BP_DOT,  BP_K,    TT(MOUSE),
-    OSM_HYPR,   BP_ECRC, ALT_APP, TD(TAP_LH), TD(TAP_RE),
+    OSM_HYPR,   BP_ECRC, ALT_APP, KC_LEFT, KC_RIGHT,
                                                          TT(SWAP), OSM_MEH,
                                                                    KC_CAPS,
                                             KC_SPC, KC_LGUI, LGUI(KC_LSFT),
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_BSPC, BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
                  BP_C,    BP_T,     BP_S,    BP_R,        BP_N,    M_RSFT,
         TD(TAP_CP),   BP_APOS, BP_Q,     BP_G,    BP_H,        BP_F,    W_RCTL,
-                               TD(TAP_UP), TD(TAP_DP), KC_LALT, BP_CCED, PERC_CLT,
+                               KC_UP, KC_DOWN, KC_LALT, BP_CCED, PERC_CLT,
     KC_LOCK, RESET,
     TD(TAP_MACRO),
     TT(NUMS), TAB_RALT, KC_ENT),
@@ -318,7 +318,7 @@ void matrix_scan_user(void) {
     SEQ_ONE_KEY(KC_ENT) {
       SEND_STRING("https://start.duckduckgo.com"SS_TAP(X_ENTER));
     }
-    }
+  }
 };
 
 // The state of the LEDs requested by the system, as a bitmask.
