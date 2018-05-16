@@ -8,7 +8,7 @@ TAP_DANCE_ENABLE = yes # Enable the tap dance feature.
 CONSOLE_ENABLE   = yes  # Console for debug
 
 BOOTMAGIC_ENABLE = no  # Virtual DIP switch configuration
-UNICODE_ENABLE   = no
+UNICODE_ENABLE   = yes
 SLEEP_LED_ENABLE = no
 API_SYSEX_ENABLE = no
 RGBLIGHT_ENABLE = no

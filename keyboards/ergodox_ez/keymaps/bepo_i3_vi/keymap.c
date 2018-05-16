@@ -7,6 +7,10 @@
 
 #include QMK_KEYBOARD_H
 #include "keymap_bepo.h"
+#include "sendstring_bepo.h"
+
+#undef LEADER_TIMEOUT
+#define LEADER_TIMEOUT 600
 
 // The layers that we are defining for this keyboards.
 #define BASE 0
@@ -70,11 +74,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = KEYMAP(
     /* left hand */
     BP_DLR,   BP_DQOT, BP_LGIL, BP_RGIL,    BP_LPRN, BP_RPRN, TO(BASE),
-    OSM_MEH,   BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(FN),
+    KC_LEAD,   BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(FN),
     LSFT_ESC, BP_A,    BP_U,    BP_I,       BP_E,    BP_COMM,
     KC_LCTL,  BP_AGRV, BP_Y,    BP_X,       BP_DOT,  BP_K,    TT(MOUSE),
     OSM_HYPR,   BP_ECRC, ALT_APP, TD(TAP_LH), TD(TAP_RE),
-                                                          TT(SWAP), KC_LEAD,
+                                                         TT(SWAP), OSM_MEH,
                                                                    KC_CAPS,
                                             KC_SPC, KC_LGUI, LGUI(KC_LSFT),
     /* right hand */
@@ -280,11 +284,41 @@ void matrix_init_user(void) {
   ergodox_right_led_1_off();
   ergodox_right_led_2_off();
   ergodox_right_led_3_off();
+
+  // Unicode support
+  set_unicode_input_mode(UC_LNX);
 };
+
+LEADER_EXTERNS();
 
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
+  LEADER_DICTIONARY() {
+    // Place leader keys on keys that are independant from layer
+    leading = false;
+    leader_end();
 
+    // for single key sequences
+    SEQ_ONE_KEY(BP_DQOT) {
+      SEND_STRING("c6joly.pw");
+    }
+
+    SEQ_ONE_KEY(BP_LGIL) {
+      SEND_STRING("l6"SS_LSFT("131719")".xyz");
+    }
+
+    SEQ_ONE_KEY(BP_RGIL) {
+      SEND_STRING("leowzukw");
+    }
+
+    SEQ_ONE_KEY(BP_LPRN) {
+      SEND_STRING("WzukW");
+    }
+
+    SEQ_ONE_KEY(KC_ENT) {
+      SEND_STRING("https://start.duckduckgo.com"SS_TAP(X_ENTER));
+    }
+    }
 };
 
 // The state of the LEDs requested by the system, as a bitmask.
