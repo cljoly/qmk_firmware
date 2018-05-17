@@ -9,7 +9,9 @@
 #include "keymap_bepo.h"
 #include "sendstring_bepo.h"
 
+#ifdef LEADER_TIMEOUT
 #undef LEADER_TIMEOUT
+#endif
 #define LEADER_TIMEOUT 600
 
 // The layers that we are defining for this keyboards.
