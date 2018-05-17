@@ -319,6 +319,10 @@ void matrix_scan_user(void) {
     SEQ_ONE_KEY(KC_ENT) {
       SEND_STRING("https://start.duckduckgo.com"SS_TAP(X_ENTER));
     }
+
+    SEQ_ONE_KEY(BP_CCED) {
+      SEND_STRING(SS_TAP(X_POWER));
+    }
   }
 };
 
