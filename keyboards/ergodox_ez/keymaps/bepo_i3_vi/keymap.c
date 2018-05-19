@@ -29,6 +29,7 @@
 #define TAP_RE    3 // Right arrow and End
 #define TAP_UP    4 // Up arrow and Page Up
 #define TAP_DP    5 // Down arrow and Page Down
+#define TAPB      6 // Tab tap
 
 // A 'transparent' key code (that falls back to the layers below it).
 #define ___ KC_TRANSPARENT
@@ -44,7 +45,8 @@
 #define SPC_RALT  MT(MOD_RALT, KC_SPC)  // SPACE key and right alt modifier.
 #define ENT_RALT  MT(MOD_RALT, KC_ENT)  // ENTER key and right alt modifier.
 #define TAB_RALT  MT(MOD_RALT, KC_TAB)  // TAB key and right alt modifier.
-#define LCTL_TAB  LCTL(KC_TAB)  // TAB key and right alt modifier.
+#define LCTL_TAB  LCTL(KC_TAB)          // TAB key and right alt modifier.
+#define LCTL_LSFT_TAB  LCTL(S(KC_TAB))  // TAB key and right alt modifier.
 #define LSFT_ESC  MT(MOD_LSFT, KC_ESC)  // ESCAPE key and left shift modifier.
 #define LALT_ESC  MT(KC_LALT, KC_ESC)   // ESCAPE key and left alt modifier.
 #define PERC_FN    LT(FN, BP_PERC)      // '%' key and FN layer toggle.
@@ -78,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = KEYMAP(
     /* left hand */
     BP_DLR,   BP_DQOT, BP_LGIL, BP_RGIL,    BP_LPRN, BP_RPRN, KC_LEAD,
-    LCTL_TAB,   BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(MOUSE),
+    TD(TAPB),   BP_B,    BP_ECUT, BP_P,       BP_O,    BP_EGRV, TT(MOUSE),
     LSFT_ESC, BP_A,    BP_U,    BP_I,       BP_E,    BP_COMM,
     KC_LCTL,  BP_AGRV, BP_Y,    BP_X,       BP_DOT,  BP_K,    OSM_MEH,
     OSM_HYPR,   LCTL_ALT, ALT_APP, KC_LEFT, KC_RIGHT,
@@ -249,6 +251,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TAP_RE] = ACTION_TAP_DANCE_DOUBLE(KC_RIGHT, KC_END),
   [TAP_UP] = ACTION_TAP_DANCE_DOUBLE(KC_UP, KC_PGUP),
   [TAP_DP] = ACTION_TAP_DANCE_DOUBLE(KC_DOWN, KC_PGDN),
+  [TAPB] = ACTION_TAP_DANCE_DOUBLE(LCTL_TAB, LCTL_LSFT_TAB),
 };
 
 // Runs for each key down or up event.
