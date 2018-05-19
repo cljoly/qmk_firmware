@@ -16,10 +16,10 @@
 
 // The layers that we are defining for this keyboards.
 #define BASE 0
-#define FN 1
+#define FN    1
 #define MOUSE 2
-#define NUMS 3
-#define SWAP 4
+#define NUMS  3
+#define SWAP  4
 #define SYSLEDS 5
 
 // The Tap Dance identifiers, used in the TD keycode and tap_dance_actions array.
@@ -46,13 +46,13 @@
 #define TAB_RALT  MT(MOD_RALT, KC_TAB)  // TAB key and right alt modifier.
 #define LCTL_TAB  LCTL(KC_TAB)  // TAB key and right alt modifier.
 #define LSFT_ESC  MT(MOD_LSFT, KC_ESC)  // ESCAPE key and left shift modifier.
-#define LALT_ESC  MT(KC_LALT, KC_ESC)  // ESCAPE key and left alt modifier.
+#define LALT_ESC  MT(KC_LALT, KC_ESC)   // ESCAPE key and left alt modifier.
 #define PERC_FN    LT(FN, BP_PERC)      // '%' key and FN layer toggle.
 #define PERC_CLT    MT(MOD_LCTL | MOD_LALT, BP_PERC)      // '%' key and LCTL+LALT.
-#define LCTL_ALT    LCTL(KC_LALT)      // Ctrl+LAlt
+#define LCTL_ALT    LCTL(KC_LALT)       // Ctrl+LAlt
 #define ALT_APP   ALT_T(KC_APPLICATION) // Alt and App menu
-#define OSM_HYPR   OSM(MOD_HYPR) // Hyper with one-shot mod
-#define OSM_MEH   OSM(MOD_MEH) // Meh with one-shot mod
+#define OSM_HYPR   OSM(MOD_HYPR)        // Hyper with one-shot mod
+#define OSM_MEH   OSM(MOD_MEH)          // Meh with one-shot mod
 
 // The most portable copy/paste keys (windows (mostly), linux, and some terminal emulators).
 #define MK_CUT    LSFT(KC_DEL)  // shift + delete
@@ -115,8 +115,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___, ___,
     ___,
     ___, ___,    ___),
-    // Note that any change to the FN layer above must be added to
-    // the MOUSE layer below (except for the arrow keys).
 
   // Layer 2: Mouse control.
   [MOUSE] = KEYMAP(
