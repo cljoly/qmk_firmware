@@ -144,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* left hand */
     ___, ___, ___,     ___,     ___,      ___, ___,
     ___, BP_DLR, ALTGR(BP_E), BP_COMM, BP_DOT,   BP_EQL, ___,
-    ___, BP_1,   BP_3,        BP_5,    BP_7,     BP_9,
+    ___, BP_1,   BP_2,        BP_3,    BP_4,     BP_5,
     ___, KC_INS,    MK_CUT,      MK_COPY, MK_PASTE, KC_PAUS, ___,
     ___, ___,    ___,         ___,     ___,
                                               ___, ___,
@@ -153,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* right hand */
          ___, ___,  ___,     ___,     ___,     ___, ___,
          ___,  BP_PLUS, BP_MINS, BP_ASTR, BP_SLSH, BP_ASTR, BP_PERC,
-              BP_8, BP_6,    BP_4,    BP_2,    BP_0,    ___,
+              BP_6, BP_7,    BP_8,    BP_9,    BP_0,    ___,
          ___, ___,  PAD_00, PAD_000,  KC_SLCK,     KC_NLCK,     ___,
                       ___,     ___,     ___,     ___,     ___,
     ___, ___,
