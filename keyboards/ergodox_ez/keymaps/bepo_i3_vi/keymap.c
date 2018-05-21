@@ -43,6 +43,7 @@
 #define M_RSFT    MT(MOD_RSFT, BP_M)    // 'M' key and right shift modifier.
 #define W_RCTL    MT(MOD_RCTL, BP_W)    // 'W' key and right control modifier.
 #define SPC_RALT  MT(MOD_RALT, KC_SPC)  // SPACE key and right alt modifier.
+#define SPC_LGUI  MT(MOD_LGUI, KC_SPC)  // SPACE key and left gui modifier.
 #define ENT_RALT  MT(MOD_RALT, KC_ENT)  // ENTER key and right alt modifier.
 #define TAB_RALT  MT(MOD_RALT, KC_TAB)  // TAB key and right alt modifier.
 #define LCTL_TAB  LCTL(KC_TAB)          // TAB key and right alt modifier.
@@ -86,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     OSM_HYPR,   LCTL_ALT, ALT_APP, KC_LEFT, KC_RIGHT,
                                                      TO(BASE), TT(SYSLEDS),
                                                                    KC_CAPS,
-                                                   KC_SPC, KC_LGUI, TT(FN),
+                                               SPC_LGUI, TT(MOUSE), TT(FN),
     /* right hand */
         KC_DEL,  BP_AT,   BP_PLUS,  BP_MINS, BP_SLSH,     BP_ASTR, BP_EQL,
         KC_BSPC, BP_DCRC, BP_V,     BP_D,    BP_L,        BP_J,    BP_Z,
